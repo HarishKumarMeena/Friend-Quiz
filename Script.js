@@ -23,9 +23,26 @@ function quiz(userAnswer, correctAnswer)
 var userName = readlineSync.question("What's your name? ");
 console.log("\n\nWelcome " + userName + " !!\n\nIt's the quiz time!!\n\n");
 
-quiz(readlineSync.question("Where do I live? "), "Jaipur");
-quiz(readlineSync.question("what's my age? "), "20");
-quiz(readlineSync.question("Did I play GTA yes/no? "), "Yes");
-quiz(readlineSync.question("What's the version of my windows? "), "11");
-quiz(readlineSync.question("Who is my idol? "), "Hemant sir");
+var questions = [{
+  question: "Where do I live? ",
+  answer: "Jaipur"
+},{
+  question: "what's my age? ",
+  answer: "20"
+},{
+  question: "Did I play GTA yes/no? ",
+  answer: "Yes"
+},{
+  question: "What's the version of my windows? ",
+  answer: "11"
+},{
+  question: "Who is my idol? ",
+  answer: "Hemant sir" 
+}];
+
+for(var i = 0; i < questions.length; i++)
+{
+  var currentQuestion = questions[i];
+  quiz(readlineSync.question(currentQuestion.question), currentQuestion.answer)
+}
 
